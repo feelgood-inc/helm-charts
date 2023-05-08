@@ -1,0 +1,21 @@
+app: "fg-ms"
+deployment:
+  replicas: 1
+  port: 80
+  image:
+    repository: "nginx"
+    tag: "latest"
+    pullPolicy: "IfNotPresent"
+  resources:
+    limits:
+      cpu: "100m"
+      memory: "128Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+service:
+  type: "NodePort"
+  protocol: "TCP"
+  port: 80
+  targetPort: 80
+  nodePort: 30080
