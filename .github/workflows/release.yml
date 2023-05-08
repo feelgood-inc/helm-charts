@@ -13,7 +13,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,4 +31,4 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         env:
-          CR_TOKEN: ${{ env.GH_TOKEN }}
+          CR_TOKEN: ${{ env.GITHUB_TOKEN }}
