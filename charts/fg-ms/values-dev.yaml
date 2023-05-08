@@ -8,7 +8,7 @@ deployment:
     pullPolicy: "IfNotPresent"
   resources:
     limits:
-      cpu: "100m"
+      cpu: "80m"
       memory: "128Mi"
     requests:
       cpu: "100m"
