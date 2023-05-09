@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
             - name: {{ .Values.app }}
-              image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
+              image: "{{ .Values.deployment.image.host }}/{{ .Values.deployment.image.registry }}/{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
               pullPolicy: {{ .Values.deployment.image.pullPolicy }}
               resources:
                 limits:

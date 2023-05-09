@@ -3,6 +3,8 @@ deployment:
   replicas: 1
   port: 80
   image:
+    host: registry.digitalocean.com
+    registry: fg-registry
     repository: "nginx"
     tag: "latest"
     pullPolicy: "IfNotPresent"
