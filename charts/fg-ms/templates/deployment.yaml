@@ -26,6 +26,6 @@ spec:
                   memory: {{ .Values.deployment.resources.requests.memory }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
-            imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+               imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
             imagePullSecrets:
               - name: {{ .Values.deployment.image.pullSecrets }}
