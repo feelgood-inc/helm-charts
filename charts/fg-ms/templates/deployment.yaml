@@ -17,9 +17,6 @@ spec:
             containers:
             - name: {{ .Values.app }}
               image: "{{ .Values.deployment.image.host }}/{{ .Values.deployment.image.registry }}/{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
-              imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
-              imagePullSecrets:
-                - name: {{ .Values.deployment.image.pullSecrets }}
               resources:
                 limits:
                   cpu: {{ .Values.deployment.resources.limits.cpu }}
@@ -29,3 +26,6 @@ spec:
                   memory: {{ .Values.deployment.resources.requests.memory }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
+            imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+            imagePullSecrets:
+              - name: {{ .Values.deployment.image.pullSecrets }}
