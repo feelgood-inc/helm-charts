@@ -27,5 +27,10 @@ spec:
                   memory: {{ .Values.deployment.resources.requests.memory }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
+              {{ if .Values.deployment.secrets.dopplerToken.enabled }}
+              envFrom:
+                - secretRef:
+                    name: "{{ .Values.deployment.secrets.dopplerToken.prefix }}-{{ .Values.app }}"
+              {{ end }}
             imagePullSecrets:
               - name: {{ .Values.deployment.image.pullSecrets }}

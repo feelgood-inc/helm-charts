@@ -16,6 +16,10 @@ deployment:
     requests:
       cpu: "100m"
       memory: "128Mi"
+  secrets:
+    dopplerToken:
+      enabled: true
+      prefix: "doppler"
 service:
   type: "NodePort"
   protocol: "TCP"
