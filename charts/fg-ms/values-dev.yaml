@@ -1,4 +1,5 @@
 app: "fg-ms"
+path: "users"
 deployment:
   replicas: 1
   port: 80
