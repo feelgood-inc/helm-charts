@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   fg-ms:
   - apiVersion: v2
+    appVersion: 0.1.11
+    created: "2023-05-11T04:26:21.872421989Z"
+    description: Template for feelgood microservices
+    digest: 22160d36b8656dcad430756932b8fc8a9bb0fb120434705b51fe119615257f3a
+    icon: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png
+    name: fg-ms
+    type: application
+    urls:
+    - https://github.com/feelgood-inc/helm-charts/releases/download/fg-ms-0.1.11/fg-ms-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
     appVersion: 0.1.10
     created: "2023-05-11T04:20:29.508755458Z"
     description: Template for feelgood microservices
@@ -111,4 +122,4 @@ entries:
     urls:
     - https://github.com/feelgood-inc/helm-charts/releases/download/fg-ms-0.1.0/fg-ms-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-11T04:20:29.508787659Z"
+generated: "2023-05-11T04:26:21.872464789Z"
