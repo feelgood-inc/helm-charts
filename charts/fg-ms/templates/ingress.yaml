@@ -13,3 +13,4 @@ spec:
                 name: {{ .Values.app }}
                 port:
                   number: {{ .Values.deployment.port }}
+  ingressClassName: nginx
