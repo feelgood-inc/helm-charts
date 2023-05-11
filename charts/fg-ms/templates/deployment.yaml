@@ -8,7 +8,7 @@ spec:
     replicas: {{ .Values.deployment.replicas }}
     selector:
       matchLabels:
-        app: {{ .Values.app }}
+        app.kubernetes.io/name: {{ .Values.app }}
     template:
         metadata:
             labels: 
