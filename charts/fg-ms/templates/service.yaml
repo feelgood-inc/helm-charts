@@ -5,7 +5,7 @@ metadata:
 
 spec:
     selector:
-      app.kubernetes.io/name: {{ .Values.app }}
+      app: {{ .Values.app }}
     ports:
         - protocol: {{ .Values.service.protocol }}
           port: {{ .Values.service.port }}
