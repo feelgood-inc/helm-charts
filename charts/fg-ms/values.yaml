@@ -15,8 +15,8 @@ deployment:
       cpu: "80m"
       memory: "128Mi"
     requests:
-      cpu: "100m"
-      memory: "128Mi"
+      cpu: "160m"
+      memory: "256Mi"
   secrets:
     dopplerToken:
       enabled: true

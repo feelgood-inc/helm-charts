@@ -26,8 +26,8 @@ spec:
                   cpu: {{ .Values.deployment.resources.requests.cpu }}
                   memory: {{ .Values.deployment.resources.requests.memory }}
               ports:
-               - containerPort: {{ .Values.deployment.port }}
-                 name: {{ .Values.app }}
+               - name: "{{ .Values.app }}-port"
+                 containerPort: {{ .Values.deployment.port }}
               {{ if .Values.deployment.secrets.dopplerToken.enabled }}
               envFrom:
                 - secretRef:
