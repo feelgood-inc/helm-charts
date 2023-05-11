@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.app }}
   labels:
-    app.kubernetes.io/name: {{ .Values.app }}
+    app: {{ .Values.app }}
 spec:
     replicas: {{ .Values.deployment.replicas }}
     selector:
