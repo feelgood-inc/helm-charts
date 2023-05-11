@@ -25,6 +25,5 @@ service:
   type: "NodePort"
   protocol: "TCP"
   port: 80
-  portName: "web"
   targetPort: 80
   nodePort: 30080
