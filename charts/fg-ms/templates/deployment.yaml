@@ -27,6 +27,7 @@ spec:
                   memory: {{ .Values.deployment.resources.requests.memory }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
+                 protocol: TCP
               {{ if .Values.deployment.secrets.dopplerToken.enabled }}
               envFrom:
                 - secretRef:
