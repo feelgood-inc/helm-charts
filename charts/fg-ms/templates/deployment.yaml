@@ -21,13 +21,21 @@ spec:
               resources:
               {{ if .Values.deployment.resources.limits }}
                 limits:
-                  cpu: {{ .Values.deployment.resources.limits.cpu }}
-                  memory: {{ .Values.deployment.resources.limits.memory }}
+                  {{ if .Values.deployment.resources.limits.cpu }}
+                    cpu: {{ .Values.deployment.resources.limits.cpu }}
+                  {{ end }}
+                  {{ if .Values.deployment.resources.limits.memory }}
+                    memory: {{ .Values.deployment.resources.limits.memory }}
+                  {{ end }}
               {{ end }}
               {{ if .Values.deployment.resources.requests }}
                 requests:
-                  cpu: {{ .Values.deployment.resources.requests.cpu }}
-                  memory: {{ .Values.deployment.resources.requests.memory }}
+                  {{ if .Values.deployment.resources.requests.cpu }}
+                    cpu: {{ .Values.deployment.resources.requests.cpu }}
+                  {{ end }}
+                  {{ if .Values.deployment.resources.requests.memory }}
+                    memory: {{ .Values.deployment.resources.requests.memory }}
+                  {{ end }}
               {{ end }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
