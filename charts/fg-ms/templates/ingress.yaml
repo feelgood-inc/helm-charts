@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: "{{ .Values.app }}-ingress"
-  {{ .Values.ingress.annotations }}
+  {{ if .Values.ingress.annotations }}
   annotations:
     {{ if .Values.ingress.annotations.sessionAffinity.enabled }}
     nginx.ingress.kubernetes.io/affinity: {{ .Values.ingress.annotations.sessionAffinity.type }}
