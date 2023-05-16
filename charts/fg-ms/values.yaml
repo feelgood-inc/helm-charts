@@ -21,3 +21,10 @@ service:
   targetPort: 80
   nodePort: 30080
   class: "nginx"
+ingress:
+  annotations:
+      sessionAffinity:
+        enabled: true
+        type: "cookie"
+        cookieName: "route"
+        cookieMaxAge: "86400"
