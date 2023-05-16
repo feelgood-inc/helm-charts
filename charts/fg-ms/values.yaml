@@ -23,8 +23,6 @@ service:
   class: "nginx"
 ingress:
   annotations:
-      sessionAffinity:
-        enabled: true
-        type: "cookie"
-        cookieName: "route"
-        cookieMaxAge: "86400"
+    sessionAffinity:
+      type: "cookie"
+      cookieName: "route"
