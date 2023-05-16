@@ -7,6 +7,9 @@ metadata:
     {{ if .Values.ingress.annotations.sessionAffinity }}
     nginx.ingress.kubernetes.io/affinity: {{ .Values.ingress.annotations.sessionAffinity.type }}
     nginx.ingress.kubernetes.io/session-cookie-name: {{ .Values.ingress.annotations.sessionAffinity.cookieName }}
+    nginx.ingress.kubernetes.io/affinity-mode: {{ .Values.ingress.annotations.sessionAffinity.mode }}
+    {{ end }}
+    {{ if .Values.ingress.annotations.sslRedirect }}
     {{ end }}
   {{ end }}
 spec:

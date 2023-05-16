@@ -26,3 +26,4 @@ ingress:
     sessionAffinity:
       type: "cookie"
       cookieName: "route"
+      mode: "persistent"
