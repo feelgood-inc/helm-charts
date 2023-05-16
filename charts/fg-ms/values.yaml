@@ -10,13 +10,6 @@ deployment:
     tag: "latest"
     pullPolicy: "IfNotPresent"
     pullSecrets: "fg-registry"
-  resources:
-    limits:
-      cpu: "80m"
-      memory: "128Mi"
-    requests:
-      cpu: "160m"
-      memory: "256Mi"
   secrets:
     dopplerToken:
       enabled: true
