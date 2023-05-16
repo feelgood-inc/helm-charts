@@ -18,6 +18,7 @@ spec:
             - name: {{ .Values.app }}
               image: "{{ .Values.deployment.image.host }}/{{ .Values.deployment.image.registry }}/{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
               imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+              {{ if .Values.deployment.resources }}
               resources:
               {{ if .Values.deployment.resources.limits }}
                 limits:
@@ -36,6 +37,7 @@ spec:
                   {{ if .Values.deployment.resources.requests.memory }}
                     memory: {{ .Values.deployment.resources.requests.memory }}
                   {{ end }}
+              {{ end }}
               {{ end }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
