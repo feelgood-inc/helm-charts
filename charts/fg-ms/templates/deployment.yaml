@@ -19,12 +19,16 @@ spec:
               image: "{{ .Values.deployment.image.host }}/{{ .Values.deployment.image.registry }}/{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
               imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
               resources:
+              {{ if .Values.deployment.resources.limits }}
                 limits:
                   cpu: {{ .Values.deployment.resources.limits.cpu }}
                   memory: {{ .Values.deployment.resources.limits.memory }}
+              {{ end }}
+              {{ if .Values.deployment.resources.requests }}
                 requests:
                   cpu: {{ .Values.deployment.resources.requests.cpu }}
                   memory: {{ .Values.deployment.resources.requests.memory }}
+              {{ end }}
               ports:
                - containerPort: {{ .Values.deployment.port }}
                  protocol: TCP
