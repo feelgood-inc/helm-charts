@@ -23,11 +23,6 @@ service:
   nodePort: 30080
   class: "nginx"
 ingress:
-  annotations:
-    sessionAffinity:
-      type: "cookie"
-      cookieName: "route"
-      mode: "persistent"
   tls:
     host: "dev.api.flgd.space"
     secretName: "fg-tls"
