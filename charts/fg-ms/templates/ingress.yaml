@@ -28,4 +28,13 @@ spec:
                 name: {{ .Values.app }}
                 port:
                   number: {{ .Values.deployment.port }}
+          {{ if .Values.ingress.ws }}
+          - path: {{ .Values.ingress.ws.path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.app }}
+                port:
+                  number: {{ .Values.ingress.ws.port }}
+          {{ end }}
   ingressClassName: nginx
