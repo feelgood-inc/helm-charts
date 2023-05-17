@@ -1,5 +1,6 @@
 app: "fg-ms"
 path: "/users"
+namespace: "core-services"
 deployment:
   replicas: 1
   port: 80
@@ -27,3 +28,6 @@ ingress:
       type: "cookie"
       cookieName: "route"
       mode: "persistent"
+  tls:
+    host: "dev.api.flgd.space"
+    secretName: "fg-tls"
