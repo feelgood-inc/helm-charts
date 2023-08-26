@@ -30,5 +30,5 @@ hpa:
   enabled: true
   minReplicas: 1
   maxReplicas: 2
-  targetCPUUtilizationPercentage: 50
-  targetMemoryUtilizationPercentage: 70
+  cpuUtilizationPercentage: 50
+  memoryUtilizationPercentage: 50

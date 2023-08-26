@@ -10,10 +10,21 @@ spec:
     name: {{ .Values.app }}
   minReplicas: {{ .Values.hpa.minReplicas }}
   maxReplicas: {{ .Values.hpa.maxReplicas }}
- {{ if .Values.hpa.targetCPUUtilizationPercentage }}
-  targetCPUUtilizationPercentage: {{ .Values.hpa.targetCPUUtilizationPercentage }}
- {{ end }}
- {{ if .Values.hpa.targetMemoryUtilizationPercentage }}
-  targetMemoryUtilizationPercentage: {{ .Values.hpa.targetMemoryUtilizationPercentage }}
- {{ end }}
+  metrics:
+  {{ if .Values.hpa.cpuUtilizationPercentage }}
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.hpa.cpuUtilizationPercentage }}
+  {{ end }}
+  {{ if .Values.hpa.memoryUtilizationPercentage }}
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.hpa.memoryUtilizationPercentage }}
+  {{ end }}
 {{ end }}
