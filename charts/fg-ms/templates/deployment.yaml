@@ -15,9 +15,9 @@ spec:
               app: {{ .Values.app }}
             annotations:
               {{ if .Values.deployment.linkerd.enabled }}
-              config.linkerd.io/proxy-cpu-request: {{ .Values.deployment.linkerd.cpuRequest }}
-              config.linkerd.io/proxy-memory-limit: {{ .Values.deployment.linkerd.memoryLimit }}
-              config.linkerd.io/proxy-memory-request: {{ .Values.deployment.linkerd.memoryRequest }}
+              config.linkerd.io/proxy-cpu-request: {{ .Values.deployment.linkerd.proxyCPURequest }}
+              config.linkerd.io/proxy-memory-limit: {{ .Values.deployment.linkerd.proxyMemoryLimit }}
+              config.linkerd.io/proxy-memory-request: {{ .Values.deployment.linkerd.proxyMemoryRequest }}
               {{ end }}
         spec:
             containers:

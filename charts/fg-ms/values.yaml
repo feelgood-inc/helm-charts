@@ -19,6 +19,7 @@ deployment:
     enabled: true
     proxyCPURequest: "10m"
     proxyMemoryRequest: "20Mi"
+    proxyMemoryLimit: "20Mi"
 service:
   type: "NodePort"
   protocol: "TCP"
