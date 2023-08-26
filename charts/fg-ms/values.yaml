@@ -15,6 +15,10 @@ deployment:
     dopplerToken:
       enabled: true
       prefix: "doppler"
+  linkerd:
+    enabled: true
+    proxyCPURequest: "10m"
+    proxyMemoryRequest: "20Mi"
 service:
   type: "NodePort"
   protocol: "TCP"
