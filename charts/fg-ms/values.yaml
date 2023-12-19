@@ -31,6 +31,12 @@ ingress:
   tls:
     host: "dev.api.flgd.space"
     secretName: "fg-tls"
+  annotations:
+    enabled: false
+    sessionAffinity:
+      enabled: false
+  ws:
+    enabled: false
 hpa:
   enabled: true
   minReplicas: 1

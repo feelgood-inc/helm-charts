@@ -2,15 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: "{{ .Values.app }}-ingress"
-  {{ if .Values.ingress.annotations }}
+  {{ if .Values.ingress.annotations.enabled }}
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 8m
-    {{ if .Values.ingress.annotations.sessionAffinity }}
+    {{ if .Values.ingress.annotations.sessionAffinity.enabled }}
     nginx.ingress.kubernetes.io/affinity: {{ .Values.ingress.annotations.sessionAffinity.type }}
     nginx.ingress.kubernetes.io/session-cookie-name: {{ .Values.ingress.annotations.sessionAffinity.cookieName }}
     nginx.ingress.kubernetes.io/affinity-mode: {{ .Values.ingress.annotations.sessionAffinity.mode }}
-    {{ end }}
-    {{ if .Values.ingress.annotations.sslRedirect }}
     {{ end }}
   {{ end }}
 spec:
@@ -29,7 +27,7 @@ spec:
                 name: {{ .Values.app }}
                 port:
                   number: {{ .Values.deployment.port }}
-          {{ if .Values.ingress.ws }}
+          {{ if .Values.ingress.ws.enabled }}
           - path: {{ .Values.ingress.ws.path }}
             pathType: Prefix
             backend:
