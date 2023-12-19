@@ -4,6 +4,7 @@ metadata:
   name: "{{ .Values.app }}-ingress"
   {{ if .Values.ingress.annotations }}
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 8m
     {{ if .Values.ingress.annotations.sessionAffinity }}
     nginx.ingress.kubernetes.io/affinity: {{ .Values.ingress.annotations.sessionAffinity.type }}
     nginx.ingress.kubernetes.io/session-cookie-name: {{ .Values.ingress.annotations.sessionAffinity.cookieName }}
